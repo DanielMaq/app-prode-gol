@@ -50,13 +50,23 @@ var app = {
     deviceBackBtn: function (){
         document.addEventListener("backbutton", function(e){
             e.preventDefault();
+            var exitApp = $("#splashPage.ui-page-active").length;
             navigator.notification.confirm(
                 '¿Seguro desea ir al login?', // message
-                onConfirm, // callback to invoke with index of button pressed
+                app.onConfirm(exitApp), // callback to invoke with index of button pressed
                 'Ir al login', // title
                 ['Cancelar','Ir'] // buttonLabels
             );
         });
+    },
+    onConfirm: function(opt)  {
+        localStorage.removeItem('userID');
+        if(opt){
+            $.mobile.changePage( "login.html" );
+        }else{
+            navigator.app.exitApp();
+        }
+
     }
 
 };
