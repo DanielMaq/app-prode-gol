@@ -1,5 +1,6 @@
 body{
-    background: url('../img/bg-body.jpg') no-repeat scroll center center / cover;
+    background: url('../img/bg-body.jpg') no-repeat scroll center center;
+    background-size: cover;
 }
 
 .container{
@@ -19,7 +20,8 @@ body{
 
 #splashPage,
 #endPage{
-    background: url('../img/bg-splashScreen.jpg') no-repeat scroll center center / cover;
+    background: url('../img/bg-splashScreen.jpg') no-repeat scroll center center;
+    background-size: cover;
 }
 #splashPage .textRedes,
 #endPage .textRedes{
