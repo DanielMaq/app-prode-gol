@@ -119,7 +119,6 @@ var app = {
                     var blob = new Blob([_usersList], {type: 'text/plain'});
                     fileWriter.write(blob);
 
-
                     navigator.app.exitApp();
 
                 }, errorHandler);

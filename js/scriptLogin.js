@@ -112,6 +112,9 @@ function saveUser(name, surname, dni, email, phone){
 }
 
 function userExists(dni, users){
+
+    return false;
+
     var _exists = 0;
     $.each(users, function(){
         var $this = this;

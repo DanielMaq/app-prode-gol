@@ -353,5 +353,5 @@ input.campo{
     background: rgba(0, 0, 0, 0) url("../img/img-ball.png") no-repeat scroll 0 0;
 }
 #gamePage .playField .line li.selected.wrong{
-    background: rgba(0, 0, 0, 0) url("../img/img-ball-wrong.png") no-repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) url("../img/img-ball-wrong-red.png") no-repeat scroll 0 0;
 }
