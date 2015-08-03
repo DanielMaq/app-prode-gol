@@ -55,7 +55,7 @@ var app = {
                 navigator.notification.confirm(
                     'Seguro deseas salir?', // message
                     app.onConfirmExit, // callback to invoke with index of button pressed
-                    'Cerrar Aplicación', // title
+                    'Cerrar Prode Gol', // title
                     ['Cancelar','Salir'] // buttonLabels
                 );
             }else{
@@ -68,13 +68,17 @@ var app = {
             }
         });
     },
-    onConfirmLogin: function()  {
-        localStorage.removeItem('userID');
-        $.mobile.changePage( "index.html" );
+    onConfirmLogin: function(buttonIndex)  {
+        if(buttonIndex == 2) {
+            localStorage.removeItem('userID');
+            $.mobile.changePage("index.html");
+        }
     },
-    onConfirmExit: function()  {
-        localStorage.removeItem('userID');
-        navigator.app.exitApp();
+    onConfirmExit: function(buttonIndex)  {
+        if(buttonIndex == 2) {
+            localStorage.removeItem('userID');
+            navigator.app.exitApp();
+        }
     }
 
 };
