@@ -68,11 +68,11 @@ var app = {
             }
         });
     },
-    onConfirmLogin: function(opt)  {
+    onConfirmLogin: function()  {
         localStorage.removeItem('userID');
-        $.mobile.changePage( "login.html" );
+        $.mobile.changePage( "index.html" );
     },
-    onConfirmExit: function(opt)  {
+    onConfirmExit: function()  {
         localStorage.removeItem('userID');
         navigator.app.exitApp();
     }
