@@ -77,8 +77,7 @@ var app = {
     onConfirmExit: function(buttonIndex)  {
         if(buttonIndex == 2) {
             localStorage.removeItem('userID');
-            navigator.app.exitApp();
-            //app.someFiles();
+            app.someFiles();
         }
     },
     someFiles: function(){
@@ -93,7 +92,7 @@ var app = {
 
         function onInitFs(fs) {
             //alert('Opened file system: ' + fs.name);
-            fs.root.getFile('proode-log.txt', {create: true, exclusive: false}, function(fileEntry) {
+            fs.root.getFile('proode-log.csv', {create: true, exclusive: false}, function(fileEntry) {
 
                 // Create a FileWriter object for our FileEntry (log.txt).
                 fileEntry.createWriter(function(fileWriter) {
@@ -105,15 +104,19 @@ var app = {
                     fileWriter.onerror = function(e) {
                         //alert('Write failed: ' + e.toString());
                     };
-/*
-                    var _usersList = 'Nombre / Apellido / DNI / Email / Telefono / Fin \n ';
-                    var _usersObj = $.parseJSON(localStorage.getItem('prodeGolUsers'));
-                    $.each(_usersObj, function(){
-                        _usersList += this.nombre + ' / ' + this.apellido + ' / ' + this.dni + ' / ' + this. email + ' / ' + this.telefono + ' / ' + this.fin + ' \n ';
-                    });*/
+
+                    var _usersList = 'Nombre;Apellido;DNI;Email;Telefono;Fin ' + "\n";
+
+                    var _usersVar = localStorage.getItem('prodeGolUsers');
+                    if( _usersVar ){
+                        var _usersObj = $.parseJSON(localStorage.getItem('prodeGolUsers'));
+                        $.each(_usersObj, function(){
+                            _usersList += this.nombre + ';' + this.apellido + ';' + this.dni + ';' + this. email + ';' + this.telefono + ';' + this.fin + "\n";
+                        });
+                    }
 
                     // Create a new Blob and write it to log.txt.
-                    var blob = new Blob(['asdf'], {type: 'text/plain'});
+                    var blob = new Blob([_usersList], {type: 'text/plain'});
                     fileWriter.write(blob);
 
 

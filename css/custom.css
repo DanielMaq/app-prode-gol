@@ -346,9 +346,9 @@ input.campo{
 #gamePage .playField .line.pos5 li{
     margin: 0 40px;
 }
-#gamePage .playField .line li.correct{
-    background: red;
-}
+/*#gamePage .playField .line li.correct{*/
+    /*background: red;*/
+/*}*/
 #gamePage .playField .line li.selected{
     background: rgba(0, 0, 0, 0) url("../img/img-ball.png") no-repeat scroll 0 0;
 }
