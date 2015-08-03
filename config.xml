@@ -11,6 +11,8 @@
 
     <author href="" email="test.and.development@gmail.com">WebFactory DevTeam</author>
 
+    <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
+
     <icon src="img/favicon.png"/>
 
     <content src="index.html" />
