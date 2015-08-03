@@ -53,14 +53,14 @@ var app = {
             var exitApp = $("#splashPage.ui-page-active").length;
             if(exitApp) {
                 navigator.notification.confirm(
-                    '¿Seguro desea ir al login?', // message
+                    'Seguro deseas salir?', // message
                     app.onConfirmExit, // callback to invoke with index of button pressed
-                    'Ir al login', // title
-                    ['Cancelar', 'Ir'] // buttonLabels
+                    'Cerrar Aplicación', // title
+                    ['Cancelar','Salir'] // buttonLabels
                 );
             }else{
                 navigator.notification.confirm(
-                    '¿Seguro desea ir al login?', // message
+                    'Seguro desea ir al login?', // message
                     app.onConfirmLogin, // callback to invoke with index of button pressed
                     'Ir al login', // title
                     ['Cancelar','Ir'] // buttonLabels
