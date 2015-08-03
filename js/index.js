@@ -60,9 +60,9 @@ var app = {
                 );
             }else{
                 navigator.notification.confirm(
-                    'Seguro desea ir al login?', // message
+                    'Seguro desea ir al inicio?', // message
                     app.onConfirmLogin, // callback to invoke with index of button pressed
-                    'Ir al login', // title
+                    'Ir al inicio', // title
                     ['Cancelar','Ir'] // buttonLabels
                 );
             }

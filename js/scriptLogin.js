@@ -2,6 +2,8 @@ $('#loginPage').on( 'pagecreate',function(event){
 
     is_logged();
 
+    clearFields();
+
     $('#loginPage #loginForm').on('submit', function(e){
         $('#loginPage .btn.ingreso').trigger('click');
         e.preventDefault();
@@ -67,6 +69,14 @@ $('#loginPage').on( 'pagecreate',function(event){
         saveUser(_name, _surname, _dni, _email, _phone);
     });
 });
+
+function clearFields(){
+    $('.campo.nombre').val('');
+    $('.campo.apellido').val('');
+    $('.campo.dni').val('');
+    $('.campo.email').val('');
+    $('.campo.telefono').val('');
+}
 
 function saveUser(name, surname, dni, email, phone){
 
