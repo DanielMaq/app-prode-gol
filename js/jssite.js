@@ -45,39 +45,6 @@ function showError(msg, er){ // 'vaciar' para resetear campo, 'er' para ocultar 
     }
 }
 
-function deviceBackBtn(){
-
-    document.addEventListener("backbutton", function(e){
-        e.preventDefault();
-        var exitApp = 0;
-        if( $("#homePage.ui-page-active").length > 0 ){
-            exitApp = 1;
-        }else if( $("#loginPage.ui-page-active").length > 0 ){
-            exitApp = 1;
-        }
-
-        if( exitApp ){
-            navigator.notification.confirm(
-                '¿Seguro deseas salir?', // message
-                onConfirm, // callback to invoke with index of button pressed
-                'Cerrar Aplicación', // title
-                ['Cancelar','Salir'] // buttonLabels
-            );
-        }else{
-            navigator.app.backHistory();
-        }
-    }, false);
-}
-
-function onConfirm(buttonIndex) {
-    if(buttonIndex == 2){
-        localStorage.removeItem('userID');
-        sessionStorage.clear();
-        //navigator.app.exitApp();
-        window.location.href = "login.html"
-    }
-}
-
 function validateEmail(email){
     var emailReg = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
     var valid = emailReg.test(email);

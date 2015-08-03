@@ -33,7 +33,8 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        //app.receivedEvent('deviceready');
+        app.deviceBackBtn();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -45,7 +46,19 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    deviceBackBtn: function (){
+        document.addEventListener("backbutton", function(e){
+            e.preventDefault();
+            navigator.notification.confirm(
+                '¿Seguro desea ir al login?', // message
+                onConfirm, // callback to invoke with index of button pressed
+                'Ir al login', // title
+                ['Cancelar','Ir'] // buttonLabels
+            );
+        });
     }
+
 };
 
 app.initialize();

@@ -9,9 +9,9 @@
 
     <description>Prode Gol</description>
 
-    <author email="dev@cordova.apache.org" href="http://cordova.io">Apache Cordova Team</author>
+    <author href="" email="test.and.development@gmail.com">WebFactory DevTeam</author>
 
-    <icon src="img/favicon.png" />
+    <icon src="img/favicon.png"/>
 
     <content src="index.html" />
     <access origin="*" />
