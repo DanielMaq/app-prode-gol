@@ -1,0 +1,56 @@
+<div data-role="page" id="loginPage">
+
+    <div role="main" class="container">
+
+        <div class="logo">
+            <img src="./img/logo.png"/>
+        </div>
+
+        <form id="loginForm" novalidate>
+            <div class="row">
+                <label>Nombre</label>
+                <input class="campo nombre font_3" type="text" placeholder="Nombre" data-role="none" value="John"/>
+            </div>
+            <div class="row">
+                <label>Apellido</label>
+                <input class="campo apellido font_3" type="text" placeholder="Apellido" data-role="none" value="Doe"/>
+            </div>
+            <div class="row">
+                <label>Mail</label>
+                <input class="campo email font_3" type="email" placeholder="Email" data-role="none"
+                       value="gpetti@aterrizar.com.ar"/>
+            </div>
+            <div class="row">
+                <label>DNI</label>
+                <input class="campo dni font_3" type="number" placeholder="DNI" data-role="none" min="0" max="99999999"
+                       maxlength="8" value="30577262"/>
+            </div>
+            <div class="row">
+                <label>Telefono<span class="apostrophe"></span></label>
+                <input class="campo telefono font_3" type="number" placeholder="Telefono" data-role="none"
+                       value="0303456"/>
+            </div>
+            <i class="fa fa-lock" style="color:#000;"></i>
+            <input type="submit" class="submitEventBtn" value="Go"/>
+        </form>
+
+        <div class="errors">
+            <img src="img/ico-error.png"/>
+
+            <p>Usuario o contraseña incorrectos</p>
+        </div>
+
+        <a href="#" class="btn ingreso font_4" data-role="none" rel="external"></a>
+
+        <img src="./img/logo-loteria.png" class="logoLoteria"/>
+
+        <div class="textBases">
+            <img src="./img/txt-bases.png"/>
+        </div>
+
+    </div>
+    <!-- /content -->
+
+
+    <script type="text/javascript" src="js/scriptLogin.js"></script>
+</div> <!-- /page -->

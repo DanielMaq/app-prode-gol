@@ -1,0 +1,355 @@
+body{
+    background: url('../img/bg-body.jpg') no-repeat scroll center center / cover;
+}
+
+.container{
+    /*border-left: 1px solid red;*/
+    /*border-right: 1px solid red;*/
+    margin: 0 auto;
+    max-width: 960px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    width: 598px;
+}
+
+/*
+ * Splash y endPage
+ */
+
+#splashPage,
+#endPage{
+    background: url('../img/bg-splashScreen.jpg') no-repeat scroll center center / cover;
+}
+#splashPage .textRedes,
+#endPage .textRedes{
+    margin: 14px 0 0;
+    text-align: center;
+}
+.textBases{
+    bottom: 14px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+#splashPage .logo,
+#endPage .logo{
+    display: block;
+    margin: 262px auto 0;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+#endPage .logo{
+    margin-top: 232px;
+}
+#splashPage a.btnLogin,
+#endPage a.btnIndex {
+    display: block;
+    margin: -55px auto 0;
+    position: relative;
+    text-align: center;
+    width: 580px;
+}
+#endPage a.btnIndex{
+    height: 252px;
+}
+#splashPage a.btnLogin img,
+#endPage a.btnIndex img{
+    max-width: 100%;
+}
+#endPage a.btnIndex img.txtEnd{
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 0;
+}
+#endPage a.btnIndex img.txt1{
+    display: none;
+    left: -5px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 55px;
+    width: 390px;
+    z-index: 1;
+}
+#endPage a.btnIndex img.txt2{
+    display: none;
+    left: -5px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 55px;
+    width: 500px;
+    z-index: 1;
+}
+#splashPage .innerContainer,
+#endPage .innerContainer{
+    position: relative;
+}
+#splashPage .innerContainer .imgSilbato,
+#endPage .innerContainer .imgSilbato{
+    position: absolute;
+    right: 0;
+    top: -70px;
+}
+#splashPage .logoLoteria,
+#endPage .logoLoteria{
+    display: block;
+    margin: 0 auto;
+}
+
+/**
+** loginPage
+**/
+#loginPage{
+    background: transparent none repeat scroll 0 0;
+}
+#loginPage .logo{
+    margin: 44px 0 0;
+    text-align: center;
+}
+#loginPage .logo img{
+    width: 230px;
+}
+#loginPage #loginForm{
+    margin: 10px auto 0;
+    position: relative;
+    width: 88%;
+}
+#loginPage #loginForm i {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    font-size: 25px;
+}
+::-webkit-input-placeholder {
+    color: black;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: black;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+    color: black;
+}
+:-ms-input-placeholder {
+    color: black;
+}
+#loginForm .row {
+    margin: 0 0 14px;
+}
+#loginPage #loginForm .row label{
+    color: #fff;
+    font-family: "collegiateblackflfregular",sans-serif;
+    font-size: 35px;
+    font-weight: normal;
+    margin: 0;
+    position: relative;
+    text-shadow: 4px 4px 4px rgba(24, 18, 17, 0.75);
+}
+#loginPage #loginForm .row label .apostrophe{
+    background: rgba(0, 0, 0, 0) url("../img/ico-apostrophe.png") no-repeat scroll 0 0;
+    display: block;
+    height: 13px;
+    left: 84px;
+    position: absolute;
+    top: -8px;
+    width: 20px;
+}
+input.campo{
+    background: #fff none no-repeat scroll 0 0;
+    border: medium none;
+    border-radius: 4px;
+    color: #000;
+    display: block;
+    line-height: 38px;
+    margin: 0 auto;
+    padding: 7px 10px 4px;
+    width: 96%;
+}
+#loginPage #loginForm .campo.password{
+    margin-bottom: 10px;
+}
+#loginPage .btn.ingreso{
+    background: rgba(0, 0, 0, 0) url("../img/btn-comenzar.png") no-repeat scroll 0 0;
+    box-shadow: none;
+    float: right;
+    height: 72px;
+    margin: 0 26px 0 0;
+    padding: 0;
+    width: 206px;
+}
+#loginPage .logoLoteria {
+    clear: both;
+    display: block;
+    margin: 90px auto 0;
+}
+#loginPage .textBases {
+    bottom: 6px;
+}
+#loginPage .errors{
+    background: #fff none repeat scroll 0 0;
+    border-radius: 4px;
+    display: none;
+    float: left;
+    margin: 0 0 0 6%;
+    width: 50%;
+}
+#loginPage .errors p{
+    width: 85%;
+}
+#loginPage #loginForm .ui-btn{
+    border: medium none;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+.errors{
+    display: none;
+}
+.errors img{
+    display: inline-block;
+    margin: 0 10px 3px;
+    vertical-align: middle;
+    width: 14px;
+}
+.errors p{
+    color: #939598;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 10px 0;
+    vertical-align: middle;
+}
+.btn.ingreso{
+    border-radius: 4px;
+    color: #ffffff;
+    display: block;
+    line-height: 50px;
+    margin: 20px auto;
+    padding: 0 6px;
+    text-align: center;
+    text-decoration: none;
+    width: 90%;
+    height: 50px;
+    background: rgb(255,124,0);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmN2MwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiNjNmMGIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(255,124,0,1) 0%, rgba(182,63,11,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,124,0,1)), color-stop(100%,rgba(182,63,11,1)));
+    background: -webkit-linear-gradient(top,  rgba(255,124,0,1) 0%,rgba(182,63,11,1) 100%);
+    background: -o-linear-gradient(top,  rgba(255,124,0,1) 0%,rgba(182,63,11,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(255,124,0,1) 0%,rgba(182,63,11,1) 100%);
+    background: linear-gradient(to bottom,  rgba(255,124,0,1) 0%,rgba(182,63,11,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7c00', endColorstr='#b63f0b',GradientType=0 );
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.51);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.51);
+    box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.51);
+}
+.btn.ingreso:active {
+    color:#c2c2c2;
+}
+
+
+/**
+** gamePage
+**/
+#gamePage{
+    background: transparent none repeat scroll 0 0;
+}
+#gamePage .msgOverlay{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+}
+#gamePage .msgOverlay .msgContainer{
+    height: 100vh;
+    position: relative;
+}
+#gamePage .msgOverlay .msgContainer img{
+    bottom: 0;
+    display: none;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#gamePage .logo{
+    display: block;
+    margin: 16px auto 0;
+    position: relative;
+    width: 230px;
+    z-index: 1;
+}
+#gamePage .playField{
+    background: rgba(0, 0, 0, 0) url("../img/bg-field.png") no-repeat scroll 0 0;
+    display: block;
+    height: 836px;
+    margin: 0 auto;
+    position: relative;
+    top: -28px;
+    width: 524px;
+}
+#gamePage .playField .line{
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+#gamePage .playField .line.pos7{
+    top: 34px;
+}
+#gamePage .playField .line.pos6{
+    top: 126px;
+}
+#gamePage .playField .line.pos5{
+    top: 245px;
+}
+#gamePage .playField .line.pos4{
+    top: 393px;
+}
+#gamePage .playField .line.pos3{
+    top: 545px;
+}
+#gamePage .playField .line.pos2{
+    top: 660px;
+}
+#gamePage .playField .line.pos1{
+    top: 746px;
+}
+#gamePage .playField .line li{
+    background: #294911 none no-repeat scroll 0 0;
+    border-radius: 25px;
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+}
+#gamePage .playField .line.pos1 li,
+#gamePage .playField .line.pos7 li{
+    margin: 0 4px;
+}
+#gamePage .playField .line.pos2 li,
+#gamePage .playField .line.pos4 li,
+#gamePage .playField .line.pos6 li{
+    margin: 0 36px;
+}
+#gamePage .playField .line.pos3 li,
+#gamePage .playField .line.pos5 li{
+    margin: 0 40px;
+}
+#gamePage .playField .line li.correct{
+    background: red;
+}
+#gamePage .playField .line li.selected{
+    background: rgba(0, 0, 0, 0) url("../img/img-ball.png") no-repeat scroll 0 0;
+}
+#gamePage .playField .line li.selected.wrong{
+    background: rgba(0, 0, 0, 0) url("../img/img-ball-wrong.png") no-repeat scroll 0 0;
+}
