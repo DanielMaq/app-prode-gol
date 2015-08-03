@@ -51,22 +51,30 @@ var app = {
         document.addEventListener("backbutton", function(e){
             e.preventDefault();
             var exitApp = $("#splashPage.ui-page-active").length;
-            navigator.notification.confirm(
-                '¿Seguro desea ir al login?', // message
-                app.onConfirm(exitApp), // callback to invoke with index of button pressed
-                'Ir al login', // title
-                ['Cancelar','Ir'] // buttonLabels
-            );
+            if(exitApp) {
+                navigator.notification.confirm(
+                    '¿Seguro desea ir al login?', // message
+                    app.onConfirmExit, // callback to invoke with index of button pressed
+                    'Ir al login', // title
+                    ['Cancelar', 'Ir'] // buttonLabels
+                );
+            }else{
+                navigator.notification.confirm(
+                    '¿Seguro desea ir al login?', // message
+                    app.onConfirmLogin, // callback to invoke with index of button pressed
+                    'Ir al login', // title
+                    ['Cancelar','Ir'] // buttonLabels
+                );
+            }
         });
     },
-    onConfirm: function(opt)  {
+    onConfirmLogin: function(opt)  {
         localStorage.removeItem('userID');
-        if(opt){
-            $.mobile.changePage( "login.html" );
-        }else{
-            navigator.app.exitApp();
-        }
-
+        $.mobile.changePage( "login.html" );
+    },
+    onConfirmExit: function(opt)  {
+        localStorage.removeItem('userID');
+        navigator.app.exitApp();
     }
 
 };
