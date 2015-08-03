@@ -78,6 +78,77 @@ var app = {
         if(buttonIndex == 2) {
             localStorage.removeItem('userID');
             navigator.app.exitApp();
+            //app.someFiles();
+        }
+    },
+    someFiles: function(){
+        var requestedBytes = 1024*1024*10; // 10MB
+
+        window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+        navigator.webkitPersistentStorage.requestQuota (
+            requestedBytes, function(grantedBytes) {
+                window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
+            }, function(e) { alert('Error', e); }
+        );
+
+        function onInitFs(fs) {
+            //alert('Opened file system: ' + fs.name);
+            fs.root.getFile('proode-log.txt', {create: true, exclusive: false}, function(fileEntry) {
+
+                // Create a FileWriter object for our FileEntry (log.txt).
+                fileEntry.createWriter(function(fileWriter) {
+
+                    fileWriter.onwriteend = function(e) {
+                        //alert('Write completed.');
+                    };
+
+                    fileWriter.onerror = function(e) {
+                        //alert('Write failed: ' + e.toString());
+                    };
+/*
+                    var _usersList = 'Nombre / Apellido / DNI / Email / Telefono / Fin \n ';
+                    var _usersObj = $.parseJSON(localStorage.getItem('prodeGolUsers'));
+                    $.each(_usersObj, function(){
+                        _usersList += this.nombre + ' / ' + this.apellido + ' / ' + this.dni + ' / ' + this. email + ' / ' + this.telefono + ' / ' + this.fin + ' \n ';
+                    });*/
+
+                    // Create a new Blob and write it to log.txt.
+                    var blob = new Blob(['asdf'], {type: 'text/plain'});
+                    fileWriter.write(blob);
+
+
+                    navigator.app.exitApp();
+
+                }, errorHandler);
+            }, errorHandler);
+
+        }
+
+        function errorHandler(e) {
+            var msg = '';
+
+            switch (e.code) {
+                case FileError.QUOTA_EXCEEDED_ERR:
+                    msg = 'QUOTA_EXCEEDED_ERR';
+                    break;
+                case FileError.NOT_FOUND_ERR:
+                    msg = 'NOT_FOUND_ERR';
+                    break;
+                case FileError.SECURITY_ERR:
+                    msg = 'SECURITY_ERR';
+                    break;
+                case FileError.INVALID_MODIFICATION_ERR:
+                    msg = 'INVALID_MODIFICATION_ERR';
+                    break;
+                case FileError.INVALID_STATE_ERR:
+                    msg = 'INVALID_STATE_ERR';
+                    break;
+                default:
+                    msg = 'Unknown Error';
+                    break;
+            }
+
+            alert('Error: ' + msg);
         }
     }
 

@@ -44,7 +44,7 @@ $('#loginPage').on( 'pagecreate',function(event){
             sendOk = 1;
         }
 
-        if( ! Number.isInteger(_dni) ){
+        if($.trim(_dni).length === 0 ){
             showError('El DNI no puede ser vacío.');
             $('input.dni').focus();
             return;
@@ -58,7 +58,7 @@ $('#loginPage').on( 'pagecreate',function(event){
             return;
         }
 
-        if( ! Number.isInteger(_phone) ){
+        if($.trim(_phone).length === 0 ){
             showError('El Telefono no puede ser vacío.');
             $('input.telefono').focus();
             return;
