@@ -43,10 +43,10 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         //app.receivedEvent('deviceready');
-        _bgTheme = new Media( _bgThemeUrl, function(err){console.log(JSON.stringify(err));}, function(err){console.log(" :Audio Error: " + JSON.stringify(err) );});
-        _goodPassTheme = new Media( _goodPassThemeUrl, function(err){console.log(JSON.stringify(err));}, function(err){console.log(" :Audio Error: " + JSON.stringify(err) );});
-        _goalTheme = new Media( _goalThemeUrl, function(err){console.log(JSON.stringify(err));}, function(err){console.log(" :Audio Error: " + JSON.stringify(err) );});
-        _ohhTheme = new Media( _ohhThemeUrl, function(err){console.log(JSON.stringify(err));}, function(err){console.log(" :Audio Error: " + JSON.stringify(err) );});
+        _bgTheme = new Media( _bgThemeUrl, function(err){console.log(JSON.stringify(err));}, function(err){ alert("Audio Error: " + JSON.stringify(err) );});
+        _goodPassTheme = new Media( _goodPassThemeUrl, function(err){console.log(JSON.stringify(err));}, function(err){alert("Audio Error: " + JSON.stringify(err) );});
+        _goalTheme = new Media( _goalThemeUrl, function(err){console.log(JSON.stringify(err));}, function(err){alert("Audio Error: " + JSON.stringify(err) );});
+        _ohhTheme = new Media( _ohhThemeUrl, function(err){console.log(JSON.stringify(err));}, function(err){alert("Audio Error: " + JSON.stringify(err) );});
         app.deviceBackBtn();
     },
     // Update DOM on a Received Event

@@ -51,6 +51,7 @@ $('#gamePage').on( 'pagecreate',function(event){
         $('.line.pos'+ _thisParentRow).addClass('blocked');
 
         if( _thisParentRow == 7 && _hasWon ){
+            _goodPassTheme.stop();
             _goalTheme.play();
             sessionStorage.setItem('endType', 0);
             endGame();

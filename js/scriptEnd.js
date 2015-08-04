@@ -9,11 +9,6 @@ $('#endPage').on( 'pagecreate',function(event){
         $('img.txt2').show();
     }
 
-    _bgTheme.stop();
-    _goalTheme.stop();
-    _ohhTheme.stop();
-    _goodPassTheme.stop();
-
     setTimeout(function(){
         $.mobile.changePage("index.html");
     }, 3000);
