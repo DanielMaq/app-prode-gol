@@ -72,10 +72,10 @@ var app = {
 
         window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
 
-        alert(JSON.stringify(window.requestFileSystem, null, 4));
+        alert(JSON.stringify(window.requestFileSystem));
 
 
-        window.requestFileSystem(PERSISTENT, 123123, function(e){ alert(JSON.stringify(e, null, 4)) }, function(e){ alert(alert(JSON.stringify(e, null, 4))) });
+        //window.requestFileSystem(PERSISTENT, 123123, function(e){ alert(JSON.stringify(e)) }, function(e){ alert(JSON.stringify(e)) });
 
         //navigator.webkitPersistentStorage.requestQuota (
         //    requestedBytes,
@@ -85,8 +85,6 @@ var app = {
         //    },
         //    function(e) { alert(e); /*alert('Error', e);*/ }
         //);
-
-        alert('asdf22');
 
         function onInitFs(fs) {
             alert('Opened file system: ' + fs.name);
