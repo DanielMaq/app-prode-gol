@@ -70,15 +70,18 @@ var app = {
     someFiles: function(){
         var requestedBytes = 1024*1024*10; // 10MB
 
-        //window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-        //alert(window.requestFileSystem);
-        alert('asdf');
+        window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+
+        alert(navigator);
         navigator.webkitPersistentStorage.requestQuota (
-            requestedBytes, function(grantedBytes) {
-                alert('212121');
-                window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
-            }, function(e) { alert(e); /*alert('Error', e);*/ }
+            requestedBytes,
+            function(grantedBytes) {
+                alert('---> '+grantedBytes);
+                //window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
+            },
+            function(e) { alert(e); /*alert('Error', e);*/ }
         );
+
         alert('asdf22');
 
         function onInitFs(fs) {
