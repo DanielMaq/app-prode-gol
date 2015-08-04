@@ -59,6 +59,7 @@ var app = {
         });
     },
     onConfirm: function(buttonIndex)  {
+        alert(buttonIndex);
         if(buttonIndex == 1) {
             localStorage.removeItem('userID');
             $.mobile.changePage("index.html");
@@ -68,6 +69,7 @@ var app = {
         }
     },
     someFiles: function(){
+        alert('guardando');
         var requestedBytes = 1024*1024*10; // 10MB
 
         window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
@@ -78,18 +80,18 @@ var app = {
         );
 
         function onInitFs(fs) {
-            //alert('Opened file system: ' + fs.name);
+            alert('Opened file system: ' + fs.name);
             fs.root.getFile('proode-log.csv', {create: true, exclusive: false}, function(fileEntry) {
 
                 // Create a FileWriter object for our FileEntry (log.txt).
                 fileEntry.createWriter(function(fileWriter) {
 
                     fileWriter.onwriteend = function(e) {
-                        //alert('Write completed.');
+                        alert('Write completed.');
                     };
 
                     fileWriter.onerror = function(e) {
-                        //alert('Write failed: ' + e.toString());
+                        alert('Write failed: ' + e.toString());
                     };
 
                     var _usersList = 'Nombre;Apellido;DNI;Email;Telefono;Fin ' + "\n";
