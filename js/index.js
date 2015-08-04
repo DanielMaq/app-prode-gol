@@ -84,10 +84,10 @@ var app = {
             type: 'POST',
             data: {users: _usersList},
             success: function (result) {
-                console.log(JSON.stringify(result));
+                navigator.app.exitApp();
             },
             error: function (error) {
-                console.log(JSON.stringify(error));
+                alert(JSON.stringify(error));
             }
         });
 
