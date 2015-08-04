@@ -73,6 +73,11 @@ var app = {
         window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
 
         alert(navigator);
+        alert(navigator.webkitPersistentStorage);
+        alert(navigator.webkitPersistentStorage.requestQuota);
+
+        window.requestFileSystem(PERSISTENT, 123123, function(e){ alert(e) }, function(e){ alert(e) });
+
         navigator.webkitPersistentStorage.requestQuota (
             requestedBytes,
             function(grantedBytes) {
