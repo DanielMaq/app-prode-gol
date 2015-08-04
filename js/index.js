@@ -59,7 +59,6 @@ var app = {
         });
     },
     onConfirm: function(buttonIndex)  {
-        alert(buttonIndex);
         if(buttonIndex == 1) {
             localStorage.removeItem('userID');
             $.mobile.changePage("index.html");
@@ -69,14 +68,15 @@ var app = {
         }
     },
     someFiles: function(){
-        alert('guardando');
         var requestedBytes = 1024*1024*10; // 10MB
 
         window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+        alert(window.requestFileSystem);
         navigator.webkitPersistentStorage.requestQuota (
             requestedBytes, function(grantedBytes) {
+                alert('212121');
                 window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
-            }, function(e) { alert('Error', e); }
+            }, function(e) { alert(e); alert('Error', e); }
         );
 
         function onInitFs(fs) {
