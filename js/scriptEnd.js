@@ -9,4 +9,8 @@ $('#endPage').on( 'pagecreate',function(event){
         $('img.txt2').show();
     }
 
+    setTimeout(function(){
+        $.mobile.changePage("index.html");
+    }, 3000);
+
 });

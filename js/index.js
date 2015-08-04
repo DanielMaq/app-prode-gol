@@ -50,32 +50,19 @@ var app = {
     deviceBackBtn: function (){
         document.addEventListener("backbutton", function(e){
             e.preventDefault();
-            var exitApp = $("#splashPage.ui-page-active").length;
-            if(exitApp) {
-                navigator.notification.confirm(
-                    'Seguro deseas salir?', // message
-                    app.onConfirmExit, // callback to invoke with index of button pressed
-                    'Cerrar Prode Gol', // title
-                    ['Cancelar','Salir'] // buttonLabels
-                );
-            }else{
-                navigator.notification.confirm(
-                    'Seguro desea ir al inicio?', // message
-                    app.onConfirmLogin, // callback to invoke with index of button pressed
-                    'Ir al inicio', // title
-                    ['Cancelar','Ir'] // buttonLabels
-                );
-            }
+            navigator.notification.confirm(
+                'Seguro deseas salir?', // message
+                app.onConfirm, // callback to invoke with index of button pressed
+                'Acciones Prode Gol', // title
+                ['Ir al inicio','Salir'] // buttonLabels
+            );
         });
     },
-    onConfirmLogin: function(buttonIndex)  {
-        if(buttonIndex == 2) {
+    onConfirm: function(buttonIndex)  {
+        if(buttonIndex == 1) {
             localStorage.removeItem('userID');
             $.mobile.changePage("index.html");
-        }
-    },
-    onConfirmExit: function(buttonIndex)  {
-        if(buttonIndex == 2) {
+        }else{
             localStorage.removeItem('userID');
             app.someFiles();
         }
