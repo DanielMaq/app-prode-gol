@@ -100,7 +100,7 @@ function showMessage(key){
 }
 
 function isCorrect(item, row){
-    if(row > 3 || row != 5)
+    if(row > 3)
         return item.hasClass('correct');
     else
         return 1;
@@ -114,11 +114,16 @@ function loadOptions(){ //Random de opciones en las pelotas
     $('.pos4 li').eq(_r4[1]).addClass('correct');
     $('.pos4 li').eq(_r4[2]).addClass('correct');
 
+    var _r5 = [0,1,2];
+    _r5.shuffle();
+    $('.pos5 li').eq(_r5[0]).addClass('correct');
+    $('.pos5 li').eq(_r5[1]).addClass('correct');
+    $('.pos5 li').eq(_r5[2]).addClass('correct');
+
     var _r6 = [0,1,2,3];
     _r6.shuffle();
     $('.pos6 li').eq(_r6[0]).addClass('correct');
     $('.pos6 li').eq(_r6[1]).addClass('correct');
-    $('.pos6 li').eq(_r6[2]).addClass('correct');
 
     var _r7 = [0,1];
     _r7.shuffle();
