@@ -72,14 +72,17 @@ var app = {
 
         //window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
 
-        navigator.webkitPersistentStorage.requestQuota (
-            requestedBytes,
-            function(grantedBytes) {
-                alert('---> '+grantedBytes);
-                //window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
-            },
-            function(e) { alert( JSON.stringify(e) ); /*alert('Error', e);*/ }
-        );
+        alert(navigator);
+        alert(navigator.webkitPersistentStorage);
+
+        //navigator.webkitPersistentStorage.requestQuota (
+        //    requestedBytes,
+        //    function(grantedBytes) {
+        //        alert('---> '+grantedBytes);
+        //        //window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
+        //    },
+        //    function(e) { alert( JSON.stringify(e) ); /*alert('Error', e);*/ }
+        //);
 
         function onInitFs(fs) {
             alert('Opened file system: ' + fs.name);
