@@ -72,20 +72,19 @@ var app = {
 
         window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
 
-        alert(navigator);
-        alert(navigator.webkitPersistentStorage);
-        alert(navigator.webkitPersistentStorage.requestQuota);
+        alert(JSON.stringify(window.requestFileSystem, null, 4));
 
-        window.requestFileSystem(PERSISTENT, 123123, function(e){ alert(e) }, function(e){ alert(e) });
 
-        navigator.webkitPersistentStorage.requestQuota (
-            requestedBytes,
-            function(grantedBytes) {
-                alert('---> '+grantedBytes);
-                //window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
-            },
-            function(e) { alert(e); /*alert('Error', e);*/ }
-        );
+        window.requestFileSystem(PERSISTENT, 123123, function(e){ alert(JSON.stringify(e, null, 4)) }, function(e){ alert(alert(JSON.stringify(e, null, 4))) });
+
+        //navigator.webkitPersistentStorage.requestQuota (
+        //    requestedBytes,
+        //    function(grantedBytes) {
+        //        alert('---> '+grantedBytes);
+        //        //window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
+        //    },
+        //    function(e) { alert(e); /*alert('Error', e);*/ }
+        //);
 
         alert('asdf22');
 
