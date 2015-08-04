@@ -1,5 +1,7 @@
 $('#gamePage').on( 'pagecreate',function(event){
 
+    _bgTheme.stop();
+
     loadOptions();
 
     $('.playField li').on('click', function(){
@@ -13,7 +15,11 @@ $('#gamePage').on( 'pagecreate',function(event){
         if($thisParent.hasClass('blocked'))
             return;
 
+        _ohhTheme.stop();
+        _goodPassTheme.stop();
+
         if( isCorrect($this, _thisParentRow) ){
+            _goodPassTheme.play();
             $('.line.pos'+ _thisParentNextRow).removeClass('blocked');
             $this.addClass('selected');
 
@@ -35,6 +41,7 @@ $('#gamePage').on( 'pagecreate',function(event){
                     break;
             }
         }else{
+            _ohhTheme.play();
             $this.addClass('selected wrong');
             sessionStorage.setItem('endType', 1);
             _hasWon = 0;
@@ -44,6 +51,7 @@ $('#gamePage').on( 'pagecreate',function(event){
         $('.line.pos'+ _thisParentRow).addClass('blocked');
 
         if( _thisParentRow == 7 && _hasWon ){
+            _goalTheme.play();
             sessionStorage.setItem('endType', 0);
             endGame();
         }

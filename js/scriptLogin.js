@@ -1,5 +1,7 @@
 $('#loginPage').on( 'pagecreate',function(event){
 
+    _bgTheme.play();
+
     is_logged();
 
     clearFields();

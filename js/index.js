@@ -16,6 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var _bgTheme;
+var _bgThemeUrl = "/android_asset/www/sounds/bgTheme.mp3";
+var _goodPassTheme;
+var _goodPassThemeUrl = "/android_asset/www/sounds/buenpase.mp3";
+var _goalTheme;
+var _goalThemeUrl = "/android_asset/www/sounds/gol-corto.mp3";
+var _ohhTheme;
+var _ohhThemeUrl = "/android_asset/www/sounds/ohh-corto.mp3";
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -34,6 +43,10 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         //app.receivedEvent('deviceready');
+        _bgTheme = new Media( _bgThemeUrl, function(err){console.log(JSON.stringify(err));}, function(err){console.log(" :Audio Error: " + JSON.stringify(err) );});
+        _goodPassTheme = new Media( _goodPassThemeUrl, function(err){console.log(JSON.stringify(err));}, function(err){console.log(" :Audio Error: " + JSON.stringify(err) );});
+        _goalTheme = new Media( _goalThemeUrl, function(err){console.log(JSON.stringify(err));}, function(err){console.log(" :Audio Error: " + JSON.stringify(err) );});
+        _ohhTheme = new Media( _ohhThemeUrl, function(err){console.log(JSON.stringify(err));}, function(err){console.log(" :Audio Error: " + JSON.stringify(err) );});
         app.deviceBackBtn();
     },
     // Update DOM on a Received Event
@@ -61,6 +74,10 @@ var app = {
     onConfirm: function(buttonIndex)  {
         if(buttonIndex == 1) {
             localStorage.removeItem('userID');
+            _bgTheme.stop();
+            _goalTheme.stop();
+            _ohhTheme.stop();
+            _goodPassTheme.stop();
             $.mobile.changePage("index.html");
         }else{
             localStorage.removeItem('userID');
