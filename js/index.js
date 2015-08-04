@@ -68,23 +68,18 @@ var app = {
         }
     },
     someFiles: function(){
-        var requestedBytes = 1024*1024*10; // 10MB
+        var requestedBytes = 1024*1024*2; // 2MB
 
-        window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+        //window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
 
-        alert(JSON.stringify(window.requestFileSystem));
-
-
-        //window.requestFileSystem(PERSISTENT, 123123, function(e){ alert(JSON.stringify(e)) }, function(e){ alert(JSON.stringify(e)) });
-
-        //navigator.webkitPersistentStorage.requestQuota (
-        //    requestedBytes,
-        //    function(grantedBytes) {
-        //        alert('---> '+grantedBytes);
-        //        //window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
-        //    },
-        //    function(e) { alert(e); /*alert('Error', e);*/ }
-        //);
+        navigator.webkitPersistentStorage.requestQuota (
+            requestedBytes,
+            function(grantedBytes) {
+                alert('---> '+grantedBytes);
+                //window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
+            },
+            function(e) { alert( JSON.stringify(e) ); /*alert('Error', e);*/ }
+        );
 
         function onInitFs(fs) {
             alert('Opened file system: ' + fs.name);
